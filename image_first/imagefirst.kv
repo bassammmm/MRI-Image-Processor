@@ -1,0 +1,148 @@
+<SmoothButton@Button>:
+    background_color: (0,0,0,0)
+    background_normal: ''
+    back_color: (.6,.6,.6,1)
+    border_radius: [10]
+    canvas.before:
+        Color:
+            rgba: (.6,.6,.6,1)
+        RoundedRectangle:
+            size: self.size
+            pos : self.pos
+            radius: [10]
+
+
+
+<ImageFirst>:
+    BoxLayout:
+        orientation: "vertical"
+        size_hint_x:.15
+        canvas.before:
+            Color:
+                rgba: (0,0,0,1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        BoxLayout:
+            size_hint_y:.1
+            canvas.before:
+                Color:
+                    rgba: (.8,.8,.8,1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            BoxLayout:
+                padding:20
+                SmoothButton:
+                    id:first_dropdown
+                    text:"More Options"
+
+        BoxLayout:
+            size_hint_y:.9
+            ScrollView:
+                GridLayout:
+                    id:thumbnails_first
+
+                    padding:15
+                    spacing:10
+                    canvas.before:
+                        Color:
+                            rgba: (.9,.9,.9,1)
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                    cols:1
+                    size_hint_y: None
+                    row_default_height: root.height*0.2
+                    height: self.minimum_height
+    BoxLayout:
+        id: image_box_layout
+        size_hint_x:.82
+        BoxLayout:
+            orientation:"vertical"
+            size_hint_x:.2
+            Label:
+
+                id:top_left_text
+                text:"Image Set:-"
+                size_hint_y:.1
+            Label:
+                id:left_scale
+
+                size_hint_y:.8
+                canvas.before:
+
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+            Label:
+                size_hint_y:.1
+        BoxLayout:
+            id: first_main_image
+            size_hint_x:.6
+
+            canvas.before:
+                Color:
+                    rgba:(0,0,0,1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+        BoxLayout:
+            size_hint_x:.2
+            orientation:"vertical"
+            Label:
+
+                id:top_right_text
+
+                text:"Some information"
+                size_hint_y:.1
+            BoxLayout:
+                Slider:
+                    orientation: "vertical"
+                    min:0
+                    max:1000
+                    on_value: root.slider_first(*args)
+                    canvas.before:
+                        Color:
+                            rgba: (0,0,0,1)
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+            BoxLayout:
+                id:left_button
+                size_hint_y:.1
+
+
+    BoxLayout:
+        size_hint_x:.03
+        orientation:"vertical"
+        BoxLayout:
+            size_hint_y:.33
+            canvas.before:
+                Color:
+                    rgba:(0.2,0.1,0.3,1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            Button:
+                id: wow
+                text:"A\nA\nA"
+
+
+
+        BoxLayout:
+            size_hint_y:.33
+            canvas.before:
+                Color:
+                    rgba:(0.1,0.5,0.2,1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+        BoxLayout:
+            size_hint_y:.33
+            canvas.before:
+                Color:
+                    rgba:(0.6,0.3,0.1,1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos

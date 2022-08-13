@@ -1,0 +1,325 @@
+<SmoothButton@Button>:
+    background_color: (0,0,0,0)
+    background_normal: ''
+    back_color: (.6,.6,.6,1)
+    border_radius: [10]
+    canvas.before:
+        Color:
+            rgba: (.6,.6,.6,1)
+        RoundedRectangle:
+            size: self.size
+            pos : self.pos
+            radius: [10]
+
+
+
+<ImageProcess>:
+
+
+    BoxLayout:
+        orientation: "vertical"
+        size_hint_x:.15
+        canvas.before:
+            Color:
+                rgba: (0,0,0,1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        BoxLayout:
+            size_hint_y:.1
+            canvas.before:
+                Color:
+                    rgba: (.8,.8,.8,1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            FloatLayout:
+                size_hint_x:0.2
+                SmoothButton:
+                    pos_hint:{"x":0,"top":.6}
+                    size_hint_y:None
+                    height:30
+                    text: '<-'
+                    on_press: root.back(self)
+            FloatLayout:
+                size_hint_x:0.8
+                SmoothButton:
+                    pos_hint:{"x":0,"top":.6}
+                    size_hint_y:None
+                    height:30
+                    id:second_dropdown
+                    text: "More Options"
+        BoxLayout:
+            size_hint_y:.9
+            ScrollView:
+                GridLayout:
+                    id:thumbnails
+
+                    padding:30
+                    spacing:10
+                    canvas.before:
+                        Color:
+                            rgba: (.9,.9,.9,1)
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                    cols:1
+                    size_hint_y: None
+                    row_default_height: root.height*0.2
+                    height: self.minimum_height
+    BoxLayout:
+        size_hint_x:.85
+
+        BoxLayout:
+
+            canvas.before:
+                Color:
+                    rgba: (0,0,0,1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+            BoxLayout:
+                orientation: "vertical"
+                size_hint_x:.5
+
+
+                BoxLayout:
+                    size_hint_y:.1
+                    Label:
+                        size_hint_x:.2
+                        id: image_1_pos
+                        background_normal:''
+                    Label:
+                        size_hint_x:.8
+                        id:image_1_top_mid
+                        text:"top mid"
+                    Label:
+                        id:image_1_top_right
+                        size_hint_x:.2
+                        text:"Image Set"
+
+                BoxLayout:
+                    size_hint_y:.8
+                    BoxLayout:
+                        size_hint_x:.1
+                        orientation:"vertical"
+
+                        Label:
+                            size_hint_y:.2
+                        Label:
+                            size_hint_y:.6
+                            id: image_1_left_scale
+                            canvas.before:
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos
+                        Label:
+                            size_hint_y:.2
+
+                    BoxLayout:
+                        size_hint_x:.8
+                        padding:2
+                        id:image_1_background
+                        canvas.before:
+                            Color:
+                                rgba: (1,0,0,1)
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+
+                        BoxLayout:
+                            id : image_1
+
+                            canvas.before:
+
+                                Color:
+                                    rgba:(1,1,1,1)
+
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos
+
+
+                    BoxLayout:
+                        size_hint_x:.1
+                        text:"right"
+                BoxLayout:
+                    size_hint_y:.1
+                    Label:
+                        size_hint_x:.2
+                        text:"Bottom Left"
+                    Label:
+                        size_hint_x:.8
+                        id: image_1_bottom_scale
+                        canvas.before:
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                    Label:
+                        size_hint_x:.2
+                        text:"Bottom Right"
+
+
+
+
+
+            BoxLayout:
+                size_hint_x:.47
+                orientation: "vertical"
+
+
+                BoxLayout:
+                    orientation: "vertical"
+                    size_hint_y:.5
+                    BoxLayout:
+                        size_hint_y:.1
+                        Label:
+                            id: image_2_pos
+                            size_hint_x:.2
+                            background_normal:''
+                        Label:
+                            size_hint_x:.6
+                            id:image_2_top_mid
+                            text:"Top Mid"
+                        Label:
+                            size_hint_x:.2
+                            text:"Ortho x"
+
+                    BoxLayout:
+                        size_hint_y:.8
+                        BoxLayout:
+                            orientation:"vertical"
+                            size_hint_x:.05
+
+                            Label:
+                                id:image_2_left_scale
+
+                                canvas.before:
+                                    Rectangle:
+                                        size: self.size
+                                        pos: self.pos
+
+
+                        BoxLayout:
+                            size_hint_x:.9
+                            orientation: "vertical"
+                            padding:2
+                            id:image_2_background
+                            canvas.before:
+                                Color:
+                                    rgba: (1,0,0,1)
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos
+
+                            BoxLayout:
+                                id : image_2
+                                canvas.before:
+                                    Color:
+                                        rgba:(1,1,1,1)
+                                    Rectangle:
+                                        size: self.size
+                                        pos: self.pos
+                        BoxLayout:
+                            size_hint_x:.05
+                    BoxLayout:
+                        size_hint_y:.1
+                        Label:
+                            size_hint_x:.2
+                            text:"Bottom Left"
+                        Label:
+                            size_hint_x:.8
+                            id:image_2_bottom_scale
+                            canvas.before:
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos
+                        Label:
+                            size_hint_x:.2
+                            text:"Bottom Right"
+                BoxLayout:
+                    size_hint_y:.5
+                    orientation: "vertical"
+                    BoxLayout:
+                        size_hint_y:.1
+                        Label:
+                            id: image_3_pos
+                            size_hint_x:.2
+                            background_normal:''
+                        Label:
+                            size_hint_x:.6
+                            id:image_3_top_mid
+                            text:"Top Mid"
+                        Label:
+                            size_hint_x:.2
+                            text:"Ortho-y"
+
+                    BoxLayout:
+                        size_hint_y:.8
+                        BoxLayout:
+                            orientation:"vertical"
+                            size_hint_x:.05
+
+                            Label:
+                                id:image_3_left_scale
+
+                                canvas.before:
+                                    Rectangle:
+                                        size: self.size
+                                        pos: self.pos
+
+
+                        BoxLayout:
+                            size_hint_x:.9
+                            orientation: "vertical"
+                            padding:2
+                            id:image_3_background
+                            canvas.before:
+                                Color:
+                                    rgba: (1,0,0,1)
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos
+
+                            BoxLayout:
+                                id : image_3
+                                canvas.before:
+                                    Color:
+                                        rgba:(1,1,1,1)
+                                    Rectangle:
+                                        size: self.size
+                                        pos: self.pos
+                        BoxLayout:
+                            size_hint_x:.05
+                    BoxLayout:
+                        size_hint_y:.1
+                        Label:
+                            size_hint_x:.2
+                            text:"Bottom Left"
+                        Label:
+                            size_hint_x:.8
+                            id:image_3_bottom_scale
+                            canvas.before:
+                                Rectangle:
+                                    size: self.size
+                                    pos: self.pos
+                        Label:
+                            size_hint_x:.2
+                            text:"Bottom Right"
+
+
+
+            Slider:
+
+                orientation: "vertical"
+                size_hint_x:.03
+                min:0
+                max:1000
+                on_value: root.slider_image(*args)
+                canvas.before:
+                    Color:
+                        rgba: (0,0,0,1)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
