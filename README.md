@@ -6,7 +6,9 @@ This is a software to view MRI images built on Kivy.
 
 Here is a demo of the app.
 
-https://github.com/bassammmm/MRI-Image-Processor/blob/main/ss/demo.wmv
+
+https://user-images.githubusercontent.com/19605547/184467310-abe5ea4f-faf2-4ebb-9c3c-aa2f140eb7f5.mov
+
 
 
 ## Screenshots
